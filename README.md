@@ -1,12 +1,19 @@
-# No longer in active development
-
-**AdAway is no longer in active development. If you like to take over the maintaining, simply fork it and implement fixes. I will only do basic maintenance like merging pull requests and releasing new versions.**
-
 # AdAway
 
 AdAway is an open source ad blocker for Android using the hosts file. 
 
 For more information visit http://adaway.org
+
+[![F-Droid](https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Get_it_on_F-Droid.svg/320px-Get_it_on_F-Droid.svg.png)](https://f-droid.org/repository/browse/?fdid=org.adaway "AdAway on F-Droid")
+
+## Support
+
+You can post [Issues](https://github.com/Free-Software-for-Android/AdAway/issues) here or obtain more detailed community support via the [XDA Thread](http://forum.xda-developers.com/showthread.php?t=2190753).
+
+## Authors
+
+AdAway is currently maintained by 0-kaladin and Dāvis Mošenkovs.
+The original author is Dominik Schürmann.
 
 # Build with Gradle
 
@@ -45,7 +52,7 @@ Translations are hosted on Transifex, which is configured by ".tx/config".
 3. Go into root folder of git repo
 4. execute ``tx pull`` (``tx pull -a`` to get all languages)
 
-see http://help.transifex.net/features/client/index.html#user-client
+see http://docs.transifex.com/client/
 
 # Coding Style
 

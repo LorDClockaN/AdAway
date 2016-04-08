@@ -33,6 +33,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Date;
+import java.text.SimpleDateFormat;
 
 import org.adaway.R;
 import org.adaway.helper.PreferenceHelper;
@@ -176,7 +178,7 @@ public class ApplyService extends WakefulIntentService {
                             /* build connection */
                             URL mURL = new URL(currentUrl);
                             URLConnection connection = mURL.openConnection();
-                            connection.setConnectTimeout(5000);
+                            connection.setConnectTimeout(15000);
                             connection.setReadTimeout(30000);
 
                             /* connect */
@@ -322,9 +324,14 @@ public class ApplyService extends WakefulIntentService {
 
             bos = new BufferedOutputStream(fos);
 
+            // build current timestamp for header
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            Date now = new Date();
+
             // add adaway header
-            String header = Constants.HEADER1 + Constants.LINE_SEPERATOR + Constants.HEADER2
-                    + Constants.LINE_SEPERATOR + Constants.HEADER_SOURCES;
+            String header = Constants.HEADER1 + Constants.LINE_SEPERATOR + "# " +
+                    formatter.format(now) + Constants.LINE_SEPERATOR + Constants.HEADER2 +
+                    Constants.LINE_SEPERATOR + Constants.HEADER_SOURCES;
             bos.write(header.getBytes());
 
             // write sources into header
